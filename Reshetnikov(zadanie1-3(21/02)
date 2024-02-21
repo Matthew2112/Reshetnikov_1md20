@@ -1,4 +1,4 @@
-Zadanie 1 
+Task 1 
 a=input('enter password:')
 b=input('confirm password:')
 if a==b:
@@ -6,7 +6,7 @@ if a==b:
 else:
     print('incorrect password')
 
-Zadanie 2
+Task 2
 a=input("enter seat number:")
 a=int(a)
 if a%2==0 and a<37:
@@ -20,7 +20,7 @@ if a%2!=0 and a>=37:
 if a>52:
     print("you have bed in the next cab")
 
-Zadanie 3
+Task 3
 def leap(y):
     if (y%4==0 and y%100!=0) or (y%400==0):
          return (f'{y}'' is leap')
@@ -28,3 +28,14 @@ def leap(y):
         return (f'{y}'' is not leap')
 y = int(input('enter year:'))
 print(leap(y))
+
+Task 4
+a= input('set collor:')
+if a=='red blue':
+    print('purpule')
+if a=='red yellow':
+    print('orange')
+if a=='blue yellow':
+    print('green')
+else:
+    print('error occured')
