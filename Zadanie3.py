@@ -1,6 +1,7 @@
-y=input('enter year:')
-y=int(y)
-if (y%4==0 and y%100!=0) or (y%400==0):
-    print('This year is leap')
-else:
-    print('this year is not leap')
+def leap(y):
+    if (y%4==0 and y%100!=0) or (y%400==0):
+         return (f'{y}'' is leap')
+    else:
+        return (f'{y}'' is not leap')
+y = int(input('enter year:'))
+print(leap(y))
