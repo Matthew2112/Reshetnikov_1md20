@@ -1,12 +1,47 @@
-import expectException
+def z1():
+    from PIL import Image
+    filename = "1.jpg"
+    with Image.open('1.jpg') as img:
+        img.load()
+        print(f"Размер изображения:{img.size}")
+        print(f"Формат изображения:{img.format}")
+        print(f"Цветовая модель изображения:{img.mode}")
+z1()
+def z2():
+    from PIL import Image
+    filename = "3.jpg"
+    with Image.open('3.jpg') as img:
+        low_res_img = img.reduce(3)
+        img2 = img.transpose(Image.FLIP_LEFT_RIGHT)
+        img3 = img.transpose(Image.FLIP_TOP_BOTTOM)
+        low_res_img.save("first.jpg")
+        img2.save("second.jpg")
+        img3.save("third.jpg")
+z2()
+def z3():
+    from PIL import Image, ImageFilter
+    images = ["1.jpg", "6.jpg", "3.jpg", "4.jpg", "5.jpg"]
+    for img in images:
+        image = Image.open(img)
+        imgfilt = image.filter(ImageFilter.CONTOUR)
+        imgfilt.save('filters/'+str(img))
+z3()
+def z4():
+    from PIL import Image, ImageFilter
+    filename = "3.jpg"
+    logo ="real.png"
+    with Image.open(logo) as img_logo:
+        img_logo.load()
 
-
-def Z1():
-    from PIL import image
-    try:
-        img=image.open('1.jpg')
-        print (f"Image size: {img.size}, Image format: {img.format}, image mode {img.mode}" )
+    img_logo = Image.open(logo)
+    img_logo = img_logo.convert("L")
+    threshold = 50
+    img_logo = img_logo.point(lambda x:255 if x > threshold else 0)
+    img_logo = img_logo.reduce(2)
+    img_logo_filt = img_logo.filter(ImageFilter.CONTOUR)
+    img_logo_filt = img_logo_filt.point(lambda x: 0 if x == 255 else 255)
+    img_logo_filt.show()
+    with Image.open(filename) as img:
+        img.paste(img_logo_filt, (480, 160), img_logo_filt)
         img.show()
-    expect: Exception as e:
-        return "Error"
-print(Z1())
+z4()

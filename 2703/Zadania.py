@@ -1,5 +1,4 @@
 import random
-
 def Z():
     h=int(input('Enter number of task: '))
     if h==1:
@@ -45,8 +44,9 @@ def Z4():
     d=()
     s3.append(random.shuffle(s1))
     s3.append(random.shuffle(s2))
-    s3=sorted(s3)
-    d.__add__(tuple(sorted(s3)))
+
+    list.s3=sorted(list.s3)
+    d.__add__(tuple(sorted(list.s3)))
     print(s1,s2,d[-15:])
     print(len(d[-15:]))
 print(Z())

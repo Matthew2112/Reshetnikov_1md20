@@ -35,4 +35,4 @@ def t4():
 
     else:
         return f"{b} ticket isn't lucky!"
-print(t4())
+print(t1())

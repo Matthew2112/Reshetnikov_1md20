@@ -67,7 +67,7 @@ def Z2():
     return f'You score is {k}'
 
 def Z3():
-    sl={'Nikolai':{'English','German','Chinese'},
+    sl={'Nikolai':{'English', 'German','Chinese'},
         'Gleb':{'English','Japanese','Latin'},
         'Ilia':{'Italian','Chinese'},
         'Anna':{'Spanish','Greek',},
